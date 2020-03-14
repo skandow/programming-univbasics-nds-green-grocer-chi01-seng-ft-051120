@@ -65,15 +65,14 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  clean_cart = consolidate_cart(cart)
   cart_counter = 0 
-  while cart_counter < clean_cart.length do 
-    if clean_cart[cart_counter][:clearance] == true
-      clean_cart[cart_counter][:price] = (clean_cart[cart_counter][:price] * 0.80).round(2)
+  while cart_counter < cart.length do 
+    if cart[cart_counter][:clearance] == true
+      cart[cart_counter][:price] = (cart[cart_counter][:price] * 0.80).round(2)
     end
     cart_counter += 1
   end
-  clean_cart 
+  cart 
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
