@@ -50,9 +50,9 @@ def apply_coupons(cart, coupons)
       couponed_item = {
         item: cart[coupon_check][:item] + " " + "W/COUPON"
         price: new_cost
-        
-      couponed_item[:price] = new_cost
-      couponed_item[:count] = 
+        clearance: cart[coupon_check][:clearance]
+        count: discounted_amount
+      }
       cart[coupon_check][:count] = non_discounted_amount
       cart << couponed_item
     end 
