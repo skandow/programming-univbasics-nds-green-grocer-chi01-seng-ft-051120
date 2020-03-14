@@ -1,8 +1,7 @@
 def find_item_by_name_in_collection(name, collection)
   collection_index = 0 
   while collection_index < collection.length do 
-    if
-      collection[collection_index][:item] == name
+    if collection[collection_index][:item] == name
       sought_item_info = collection[collection_index]
     end 
     collection_index += 1 
