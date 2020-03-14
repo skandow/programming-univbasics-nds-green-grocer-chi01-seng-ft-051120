@@ -14,15 +14,16 @@ end
 
 def consolidate_cart(cart)
   cleaned_cart = []
+  compare_cart = cart
   cart_index = 0
-  while cart_index < cart.length do 
-    cleaned_cart << cart[cart_index]
+  while cart_index < compare_cart.length do 
+    cleaned_cart << compare_cart[cart_index]
     cleaned_cart[cart_index][:count] = 1
     compare_index = 0 
-    while compare_index < cart.length do 
-      if cart[cart_index][:item] == cart[compare_index][:item] && cart_index != compare_index
+    while compare_index < compare_cart.length do 
+      if cleaned_cart[cart_index][:item] == compare_cart[compare_index][:item] && cart_index != compare_index
         cleaned_cart[cart_index][:count] += 1
-        cart.delete_at(compare_index)
+        compare_cart.delete_at(compare_index)
       else
         compare_index += 1
       end 
