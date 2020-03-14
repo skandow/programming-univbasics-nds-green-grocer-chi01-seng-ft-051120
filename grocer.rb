@@ -13,22 +13,19 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  cleaned_cart = []
-  cart_index = 0
-  while cart_index < cart.length do 
-    compare_index = 0 
-    while compare_index < cart.length do 
-      item_name = cart[compare_index][:name]
-      if !cleaned_cart[item_name]
-        cleaned_cart << cart[cart_index]
-        cleaned_cart[cart_index][:count] = 1
-      else 
-        cleaned_cart[]
-      end
-        compare_index += 1
-    end
-    cart_index += 1
+  cleaned_cart = cart
+  count_adder = 0
+  while count_adder < cleaned_cart.length do 
+    cleaned_cart[count_adder][:count] = 1
+    count_adder += 1 
   end
+  delete_counter = 0 
+  while delete_counter < cleaned_cart.length do 
+    compare_counter = 0 
+    while compare_counter < consolidated_cart.length do 
+      if [cleaned_cart][delete_counter][:name] = [cleaned_cart][compare_counter][:name] && [delete_counter] != [compare_counter]
+        [cleaned_cart][delete_counter][:count] += 1
+        
   cleaned_cart
   # Consult README for inputs and outputs
   #
