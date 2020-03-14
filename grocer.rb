@@ -21,7 +21,7 @@ def consolidate_cart(cart)
     cleaned_cart[cart_index][:count] = 1
     compare_index = 0 
     while compare_index < compare_cart.length do 
-      if cleaned_cart[cart_index][:item] == compare_cart[compare_index][:item] && cart_index != compare_index
+      if cleaned_cart[cart_index][:item] == compare_cart[compare_index][:item] && cart_index !== compare_index
         cleaned_cart[cart_index][:count] += 1
         compare_cart.delete_at(compare_index)
       else
