@@ -38,8 +38,9 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  saved_cart = cart
   coupon_check = 0
-  while coupon_check < cart.length do 
+  while coupon_check < saved_cart.length do 
     coupon_compare = 0
     while coupon_compare < coupons.length do
     if cart[coupon_check][:item] == coupons[coupon_compare][:item] && cart[coupon_check][:count] >= coupons[coupon_compare][:num]
