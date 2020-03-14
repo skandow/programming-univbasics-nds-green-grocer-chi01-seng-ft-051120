@@ -22,7 +22,7 @@ def consolidate_cart(cart)
   delete_counter = 0 
   while delete_counter < cleaned_cart.length do 
     compare_counter = 0 
-    while compare_counter < consolidated_cart.length do 
+    while compare_counter < cleaned_cart.length do 
       if [cleaned_cart][delete_counter][:name] = [cleaned_cart][compare_counter][:name] && [delete_counter] != [compare_counter]
         [cleaned_cart][delete_counter][:count] += 1
         cleaned_cart.delete_at(compare_counter)
