@@ -54,7 +54,7 @@ def apply_coupons(cart, coupons)
       cart << couponed_item
     end 
     coupon_compare += 1
-    non-discounted_amount = 0 
+    non_discounted_amount = 0 
     discounted_amount = 0
   end 
   coupon_check += 1
